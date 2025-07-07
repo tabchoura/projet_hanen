@@ -1,0 +1,99 @@
+.flotte-container {
+  flex: 1;
+  background: var(--white);
+  margin: 20px;
+  border-radius: var(--border-radius);
+  padding: 40px;
+    margin-top: 120px;
+
+  overflow-y: auto;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  transition: var(--transition);
+}
+
+.flotte-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.flotte-container h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.flotte-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+
+/* Barre décorative en haut du conteneur */
+.flotte-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+/* Media queries pour responsive */
+@media (max-width: 1024px) {
+  .flotte-container {
+    margin: 15px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flotte-container {
+    margin: 0;
+    border-radius: 0;
+    padding: 20px;
+  }
+  
+  .flotte-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flotte-container {
+    padding: 15px;
+  }
+  
+  .flotte-container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Scrollbar personnalisée */
+.flotte-container::-webkit-scrollbar {
+  width: 10px;
+}
+.flotte-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+.flotte-container::-webkit-scrollbar-track {
+  background: var(--secondary-100);
+}

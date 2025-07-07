@@ -1,0 +1,147 @@
+.reserver-container {
+  width: 80%;
+    margin: var(--spacing-10) auto;
+    margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+    padding: var(--spacing-8);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid var(--secondary-200);
+    position: relative;
+    overflow: hidden;
+      scroll-behavior: smooth;
+  scrollbar-width: thin; /* pour Firefox */
+}
+
+.reserver-recues::before {
+  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+.reserver-recues h2 {
+      text-align: center;
+    margin-bottom: var(--spacing-8);
+    color: var(--secondary-800);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+}
+
+.reserver-recues h2::before {
+  content: '📋';
+  font-size: var(--font-size-2xl);
+}
+
+.reserver-recues h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+    border-radius: var(--radius-sm);
+}
+
+.vehicle-details {
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.vehicle-details img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.vehicle-details p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.reserver-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reserver-form label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.reserver-form input {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  transition: border-color 0.3s;
+}
+
+.reserver-form input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.reserver-form button {
+  background-color: #003566;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserver-form button:hover {
+  background-color: #00264d;
+}
+
+.scrollable-section {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scroll-behavior: smooth;
+
+  /* Scrollbar Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-500) var(--secondary-100);
+}
+
+.scrollable-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollable-section::-webkit-scrollbar-track {
+  background: var(--secondary-100);
+  border-radius: var(--radius-sm);
+}
+
+.scrollable-section::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-sm);
+  transition: background 0.3s ease;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+}

@@ -1,0 +1,96 @@
+.reclamations-recues {
+  width: 90%;
+    margin: var(--spacing-10) auto;
+    margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+    padding: var(--spacing-8);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid var(--secondary-200);
+    position: relative;
+    overflow: hidden;
+      scroll-behavior: smooth;
+  scrollbar-width: thin; /* pour Firefox */
+}
+
+.reclamations-recues::before {
+content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.reclamations-recues h2 {
+  text-align: center;
+    margin-bottom: var(--spacing-8);
+    color: var(--secondary-800);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+}
+
+.reclamations-recues h2::before {
+  font-size: var(--font-size-2xl);
+}
+.reclamations-recues h2::after {
+  content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+    border-radius: var(--radius-sm);
+}
+
+.reclamations-recues ul {
+ display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reclamations-recues li {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border-left: 5px solid var(--primary-500);
+  transition: transform 0.2s ease;
+}
+
+.reclamations-recues li:hover {
+    transform: scale(1.01);
+  border-left-color: var(--primary-700);
+  box-shadow: var(--shadow-lg);
+}
+
+.reclamations-recues p {
+ margin: var(--spacing-1) 0;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-700);
+}
+
+/* Scroll personnalisé */
+.reclamations-recues::-webkit-scrollbar {
+  width: 10px;
+}
+.reclamations-recues::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+.reclamations-recues::-webkit-scrollbar-track {
+  background: var(--secondary-100);
+}

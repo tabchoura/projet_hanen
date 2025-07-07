@@ -1,0 +1,127 @@
+.gestion-clients {
+  width: 90%;
+  margin: var(--spacing-10) auto;
+  margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+  padding: var(--spacing-8);
+  background-color: var(--secondary-50);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.gestion-clients h2:before {
+  content: '';
+    position: absolute;
+    top: -31px;
+    left: -20px;
+    right: -20px;;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.gestion-clients h2 {
+     text-align: center;
+    margin-bottom: var(--spacing-8);
+    color: var(--secondary-800);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+}
+
+
+.gestion-clients h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+    border-radius: var(--radius-sm);
+}
+
+
+.gestion-clients ul {
+  list-style: none;
+  padding: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.gestion-clients li {
+  background-color: #fff;
+  border-left: 6px solid var(--primary-500);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  border-radius: var(--radius-xl);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.gestion-clients li:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.gestion-clients p {
+  margin: 0;
+  color: var(--secondary-700);
+  font-size: var(--font-size-sm);
+}
+
+.gestion-clients strong {
+  color: var(--secondary-900);
+}
+
+.gestion-clients button {
+  align-self: flex-start;
+  margin-top: var(--spacing-2);
+  background-color: var(--error-500);
+  color: white;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: background-color 0.3s ease;
+}
+
+.gestion-clients button:hover {
+  background-color: var(--error-700);
+}
+
+/* Scrollbar personnalisée */
+.gestion-clients ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gestion-clients ul::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-300), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+
+.gestion-clients ul::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gestion-clients {
+    margin-left: var(--spacing-4);
+    margin-right: var(--spacing-4);
+    padding: var(--spacing-4);
+  }
+
+  .gestion-clients h2 {
+    font-size: var(--font-size-2xl);
+  }
+}

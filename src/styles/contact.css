@@ -1,0 +1,123 @@
+.contact-static-container {
+  max-width: 800px;
+  margin: var(--spacing-10) auto;
+  margin-left:350px;
+  margin-top: 120px;
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--secondary-800);
+  border: 1px solid var(--secondary-200);
+  position: relative;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  animation: fadeIn 0.6s ease-out both;
+}
+
+/* Bandeau supérieur animé */
+.contact-static-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  animation: animateStripe 3s linear infinite;
+  background-size: 300% 100%;
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+@keyframes animateStripe {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Titre */
+.contact-static-container h2 {
+  text-align: center;
+  font-size: var(--font-size-3xl, 2rem);
+  margin-bottom: var(--spacing-6, 2rem);
+  color: var(--text-dark);
+  position: relative;
+}
+
+.contact-static-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius-sm, 6px);
+}
+
+/* Paragraphes */
+.contact-static-container p {
+  font-size: var(--font-size-base, 1rem);
+  margin-bottom: var(--spacing-4, 1rem);
+  line-height: 1.7;
+  color: var(--secondary-700, #4b5563);
+}
+
+/* Lien email */
+.contact-link {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--primary-light);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-static-container {
+    margin-left: var(--spacing-4);
+    margin-right: var(--spacing-4);
+    padding: var(--spacing-6);
+  }
+
+  .contact-static-container h2 {
+    font-size: var(--font-size-2xl, 1.5rem);
+  }
+
+  .contact-static-container p {
+    font-size: var(--font-size-sm, 0.95rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-static-container {
+    padding: var(--spacing-5);
+  }
+
+  .contact-static-container h2::after {
+    width: 40px;
+  }
+}

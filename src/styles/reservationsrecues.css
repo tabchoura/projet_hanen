@@ -1,0 +1,148 @@
+.reservations-recues {
+  width: 80%;
+    margin: var(--spacing-10) auto;
+    margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+    padding: var(--spacing-8);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid var(--secondary-200);
+    position: relative;
+    overflow: hidden;
+      scroll-behavior: smooth;
+  scrollbar-width: thin; /* pour Firefox */
+}
+
+.reservations-recues::before {
+  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+.reservations-recues h2 {
+      text-align: center;
+    margin-bottom: var(--spacing-8);
+    color: var(--secondary-800);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+}
+
+.reservations-recues h2::before {
+  content: '📋';
+  font-size: var(--font-size-2xl);
+}
+
+.reservations-recues h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+    border-radius: var(--radius-sm);
+}
+
+.reservations-recues ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reservations-recues li {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border-left: 5px solid var(--primary-500);
+  transition: transform 0.2s ease;
+}
+
+.reservations-recues li:hover {
+  transform: scale(1.01);
+  border-left-color: var(--primary-700);
+  box-shadow: var(--shadow-lg);
+}
+
+.reservations-recues p {
+  margin: var(--spacing-1) 0;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-700);
+}
+
+.reservations-recues strong {
+  color: var(--secondary-900);
+}
+
+/* Scroll personnalisé */
+.reservations-recues::-webkit-scrollbar {
+  width: 10px;
+}
+.reservations-recues::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+.reservations-recues::-webkit-scrollbar-track {
+  background: var(--secondary-100);
+}
+
+/* Responsive */
+@media (max-width: 808px) {
+  .reservations-recues {
+    margin-left: var(--spacing-4);
+    margin-right: var(--spacing-4);
+    padding: var(--spacing-4);
+  }
+
+  .reservations-recues li {
+    padding: var(--spacing-4);
+  }
+
+  .reservations-recues h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.scrollable-section {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scroll-behavior: smooth;
+
+  /* Scrollbar Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-500) var(--secondary-100);
+}
+
+.scrollable-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollable-section::-webkit-scrollbar-track {
+  background: var(--secondary-100);
+  border-radius: var(--radius-sm);
+}
+
+.scrollable-section::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-sm);
+  transition: background 0.3s ease;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+}

@@ -1,0 +1,88 @@
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  background-color:#7f1d1d
+}
+
+.filter-btn {
+  background-color: #a7c2dc;
+  border: 1px solid transparent;
+  font-size: 0.9375rem; /* 15px */
+  padding: 0.625rem 1.375rem; /* 10px 22px */
+  border-radius: 2rem;
+  cursor: pointer;
+  color: #334155;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  min-width: 80px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.filter-btn:hover {
+  background-color: #e0f2fe;
+  border-color: #38bdf8;
+  color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.filter-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+.filter-btn.active {
+  background-color: #7f1d1d;
+  color: #fff;
+  font-weight: 600;
+  border-color: #270808;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+  transform: none;
+}
+
+.filter-btn.active:hover {
+  background-color: #ef4444;
+}
+
+/* Animation pour le bouton actif */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.filter-btn.active {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Media query pour les écrans mobiles */
+@media (max-width: 640px) {
+  .filters-bar {
+    gap: 8px;
+    padding: 12px 16px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none; /* Pour Firefox */
+  }
+  
+  .filters-bar::-webkit-scrollbar {
+    display: none; /* Pour Chrome/Safari */
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+}

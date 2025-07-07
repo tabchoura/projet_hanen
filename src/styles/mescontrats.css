@@ -1,0 +1,134 @@
+
+.mes-contrats {
+  width: 90%;
+  margin: var(--spacing-10) auto;
+  margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid var(--secondary-200);
+  position: relative;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Bandeau décoratif en haut */
+.mes-contrats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+
+.mes-contrats h2 {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-8);
+  color: var(--secondary-800);
+  position: relative;
+}
+
+.mes-contrats h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+.mes-contrats ul {
+  list-style: none;
+  padding: 0;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.contrat-card {
+  background: #fff;
+  border-left: 5px solid #007bff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.contrat-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.contrat-card p {
+  margin: 8px 0;
+  color: #444;
+}
+
+.contrat-card strong {
+  color: #222;
+}
+
+.statut-attente {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.statut-paye {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.btn-payer {
+  margin-top: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-payer:hover {
+  background-color: #218838;
+}
+
+/* Scrollbar personnalisée */
+.mes-contrats ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mes-contrats ul::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 5px;
+}
+
+.mes-contrats ul::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+.mes-contrats::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.mes-contrats::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #93c5fd, #60a5fa);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.mes-contrats::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  background-clip: padding-box;
+}

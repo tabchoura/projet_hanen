@@ -1,0 +1,175 @@
+.mes-reservations {
+ width: 90%;
+  margin: var(--spacing-10) auto;
+  margin-left: calc(var(--sidebar-width) + var(--spacing-6));
+  padding: var(--spacing-8);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid var(--secondary-200);
+  position: relative;
+  
+  /* Configuration du scroll */
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  
+  /* Scrollbar personnalisée pour Webkit (Chrome, Edge, Safari) */
+  scrollbar-width: thin;
+  scrollbar-color: #93c5fd #f1f5f9;
+}
+
+/* Titre principal */
+.mes-reservations::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  z-index: 1;
+}
+
+.mes-reservations h2 {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-8);
+  color: var(--secondary-800);
+  position: relative;
+  /* Assure que le titre reste visible en haut */
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: var(--spacing-4) 0;
+  z-index: 2;
+}
+
+.mes-reservations h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+  border-radius: var(--radius-sm);
+}
+
+/* Liste des réservations */
+.mes-reservations ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Carte de réservation */
+.mes-reservations li {
+  background-color: #ffffff;
+  border-left: 4px solid #c40000;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.mes-reservations li:hover {
+  transform: scale(1.01);
+}
+
+/* Texte des réservations */
+.mes-reservations p {
+  margin: 5px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.mes-reservations strong {
+  color: #2c3e50;
+}
+
+/* Boutons génériques */
+.mes-reservations button {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mes-reservations button:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+/* Bouton rouge (supprimer) */
+.mes-reservations button.red {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+
+.mes-reservations button.red:hover {
+  background-color: #fecaca;
+}
+
+/* Boutons dans le formulaire de modification */
+.mes-reservations form button[type="submit"] {
+  background-color: #c40000;
+  color: white;
+  border: none;
+}
+
+.mes-reservations form button[type="submit"]:hover {
+  background-color: #a30000;
+}
+
+.mes-reservations form button[type="button"] {
+  background-color: #9ca3af;
+  color: white;
+  border: none;
+}
+
+.mes-reservations form button[type="button"]:hover {
+  background-color: #6b7280;
+}
+
+/* Bouton contrat */
+.contrat-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contrat-button:hover {
+  background-color: #0056b3;
+}
+
+.mes-reservations::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.mes-reservations::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #93c5fd, #60a5fa);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.mes-reservations::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  background-clip: padding-box;
+}
